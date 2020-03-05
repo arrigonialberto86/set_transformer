@@ -1,14 +1,14 @@
 version: '3'
 services:
   jupyter:
-    image: tensorflow/tensorflow:nightly-gpu-py3-jupyter
+    image: set_transformer:0.0.1
     build: .
     volumes:
       - ${TRANSFORMER}:/tf
     ports:
       - 8888:8001
   bash:
-    image: tensorflow/tensorflow:nightly-gpu-py3-jupyter
+    image: set_transformer:0.0.1
     build: .
     command: /bin/bash
     volumes:
