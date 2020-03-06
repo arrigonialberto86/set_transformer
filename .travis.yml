@@ -3,5 +3,8 @@ cache: pip
 python:
   - '3.6.9'
 
-install: pip install -r requirements.txt
+
+install:
+  - apt install libgirepository1.0-dev
+  - pip install -r requirements.txt
 script: pytest
