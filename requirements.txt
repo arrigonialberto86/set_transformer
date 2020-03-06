@@ -63,7 +63,7 @@ Pygments==2.5.2
 pygobject
 pyparsing==2.4.6
 pyrsistent==0.15.7
-python-apt==1.6.5+ubuntu0.2
+python-apt
 python-dateutil==2.8.1
 pytz==2019.3
 pyxdg==0.25
