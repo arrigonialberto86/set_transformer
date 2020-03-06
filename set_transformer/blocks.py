@@ -8,7 +8,7 @@ from set_transformer.layers import RFF
 
 
 class MultiHeadAttentionBlock(tf.keras.layers.Layer):
-    def __init__(self, d, h, rff):
+    def __init__(self, d: int, h: int, rff: RFF):
         super(MultiHeadAttentionBlock, self).__init__()
         self.multihead = MultiHeadAttention(d, h)
         self.layer_norm1 = LayerNormalization(epsilon=1e-6, dtype='float32')
@@ -29,7 +29,7 @@ class MultiHeadAttentionBlock(tf.keras.layers.Layer):
 
 
 class SetAttentionBlock(tf.keras.layers.Layer):
-    def __init__(self, d, h, rff):
+    def __init__(self, d: int, h: int, rff: RFF):
         super(SetAttentionBlock, self).__init__()
         self.mab = MultiHeadAttentionBlock(d, h, rff)
 
@@ -44,7 +44,7 @@ class SetAttentionBlock(tf.keras.layers.Layer):
 
 
 class InducedSetAttentionBlock(tf.keras.layers.Layer):
-    def __init__(self, d, m, h, rff1, rff2):
+    def __init__(self, d: int, m: int, h: int, rff1: RFF, rff2: RFF):
         """
         Arguments:
             d: an integer, input dimension.
@@ -76,7 +76,7 @@ class InducedSetAttentionBlock(tf.keras.layers.Layer):
 
 class PoolingMultiHeadAttention(tf.keras.layers.Layer):
 
-    def __init__(self, d, k, h, rff, rff_s):
+    def __init__(self, d: int, k: int, h: int, rff: RFF, rff_s: RFF):
         """
         Arguments:
             d: an integer, input dimension.
@@ -105,9 +105,9 @@ class PoolingMultiHeadAttention(tf.keras.layers.Layer):
         return self.mab(s, self.rff_s(z))
 
 
-class STEncoderBasic(tf.keras.layers.Layer):
+class STEncoder(tf.keras.layers.Layer):
     def __init__(self, d=12, m=6, h=6):
-        super(STEncoderBasic, self).__init__()
+        super(STEncoder, self).__init__()
 
         # Embedding part
         self.linear_1 = Dense(d, activation='relu')
@@ -120,9 +120,9 @@ class STEncoderBasic(tf.keras.layers.Layer):
         return self.isab_2(self.isab_1(self.linear_1(x)))
 
 
-class STDecoderBasic(tf.keras.layers.Layer):
+class STDecoder(tf.keras.layers.Layer):
     def __init__(self, out_dim, d=12, h=2, k=8):
-        super(STDecoderBasic, self).__init__()
+        super(STDecoder, self).__init__()
 
         self.PMA = PoolingMultiHeadAttention(d, k, h, RFF(d), RFF(d))
         self.SAB = SetAttentionBlock(d, h, RFF(d))
