@@ -1,3 +1,4 @@
+codecov
 scipy
 seaborn
 tf-nightly-gpu==2.2.0.dev20200218
