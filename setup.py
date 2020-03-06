@@ -6,6 +6,6 @@ setup(name='set_transformer',
       author='Alberto Arrigoni',
       author_email='arrigonialberto86@gmail.com',
       url='https://github.com/arrigonialberto86',
-      requires=['numpy', 'pandas', 'scipy', 'seaborn', 'pillow'],
+      # requires=['numpy', 'pandas', 'scipy', 'seaborn', 'pillow'],
       packages=find_packages()
 )
