@@ -94,3 +94,4 @@ Werkzeug==1.0.0
 widgetsnbextension==3.5.1
 wrapt==1.12.0
 zipp==3.0.0
+pytest
