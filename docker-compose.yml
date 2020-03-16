@@ -5,7 +5,7 @@ services:
     build: .
     command: jupyter notebook --ip=0.0.0.0 --port=8001 --allow-root --NotebookApp.token='' --NotebookApp.password='' --notebook-dir=/app/
     volumes:
-      - ${TRANSFORMER}:/tf
+      - ${TRANSFORMER}:/app
     ports:
       - 8001:8001
   bash:
