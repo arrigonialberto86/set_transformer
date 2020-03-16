@@ -3,10 +3,11 @@ services:
   jupyter:
     image: set_transformer:0.0.1
     build: .
+    command: jupyter notebook --ip=0.0.0.0 --port=8001 --allow-root --NotebookApp.token='' --NotebookApp.password='' --notebook-dir=/app/
     volumes:
       - ${TRANSFORMER}:/tf
     ports:
-      - 8888:8001
+      - 8001:8001
   bash:
     image: set_transformer:0.0.1
     build: .

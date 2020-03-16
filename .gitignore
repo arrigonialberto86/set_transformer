@@ -1,6 +1,6 @@
 .idea
 ipynb/vision_model.h5
-ipynb/.ipynb_checkpoints
+ipynb/.ipynb_checkpoints/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
