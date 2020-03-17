@@ -3,6 +3,8 @@ A TensorFlow implementation of the paper 'Set Transformer: A Framework for Atten
 
 [![Build Status](https://travis-ci.com/arrigonialberto86/set_transformer.svg?branch=master)](https://travis-ci.com/arrigonialberto86/set_transformer)
 
+[![PyPI version](https://badge.fury.io/py/tensorflow.svg)](https://badge.fury.io/py/tensorflow)
+
 <img src="imgs/transformer.png" alt="Image not found" width="400"/>
 
 ## Using the Docker (dev-only mode)
