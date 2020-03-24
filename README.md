@@ -7,7 +7,7 @@ A TensorFlow implementation of the paper 'Set Transformer: A Framework for Atten
 
 <img src="imgs/transformer.png" alt="Image not found" width="400"/>
 
-## Using the Docker (dev-only mode)
+## Using Docker (dev-only mode)
 
 In this project a Dockerfile and a docker-compose.yml files have been added. You can use the listed services after cloning this project by doing:
 
